@@ -14,13 +14,13 @@ import kotlinx.coroutines.launch
 abstract class SweetViewModel : ViewModel() {
 
     private val _isLoading = MutableLiveData(false)
-    val isLoading: LiveData<Boolean> = _isLoading
+    internal val isLoading: LiveData<Boolean> = _isLoading
 
     private val _dialogEvent = MutableLiveData<DialogEvent>()
-    val dialogEvent: LiveData<DialogEvent> = _dialogEvent
+    internal val dialogEvent: LiveData<DialogEvent> = _dialogEvent
 
     private val _navigationEvent = SingleLiveEvent<NavEvent>()
-    val navigationEvent: LiveData<NavEvent> = _navigationEvent
+    internal val navigationEvent: LiveData<NavEvent> = _navigationEvent
 
     protected open fun handleSafeException(e: Exception) {
         showError(e)
