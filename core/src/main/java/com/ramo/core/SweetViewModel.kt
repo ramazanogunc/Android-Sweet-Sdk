@@ -22,7 +22,7 @@ abstract class SweetViewModel : ViewModel() {
     private val _navigationEvent = SingleLiveEvent<NavEvent>()
     val navigationEvent: LiveData<NavEvent> = _navigationEvent
 
-    open fun handleSafeException(e: Exception) {
+    protected open fun handleSafeException(e: Exception) {
         showError(e)
     }
 

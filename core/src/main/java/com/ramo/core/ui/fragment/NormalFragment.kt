@@ -24,8 +24,12 @@ abstract class NormalFragment(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        initCommonObserver()
         return inflater.inflate(layoutId, container,false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initCommonObserver()
     }
 
     private fun initCommonObserver() {

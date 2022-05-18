@@ -29,8 +29,12 @@ abstract class ViewBindingFragment<VB : ViewBinding> : Fragment() {
         val foundInflater = findInflateMethod()
         @Suppress("UNCHECKED_CAST")
         _binding = foundInflater.invoke(null, inflater, container, false) as VB
-        initCommonObserver()
         return _binding!!.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initCommonObserver()
     }
 
     override fun onDestroyView() {

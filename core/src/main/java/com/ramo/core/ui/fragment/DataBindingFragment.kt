@@ -29,8 +29,12 @@ abstract class DataBindingFragment<DB : ViewDataBinding>(
     ): View? {
         _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         _binding?.lifecycleOwner = viewLifecycleOwner
-        initCommonObserver()
         return _binding!!.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initCommonObserver()
     }
 
     override fun onDestroyView() {
