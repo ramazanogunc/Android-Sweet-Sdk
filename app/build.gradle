@@ -33,6 +33,9 @@ android {
         viewBinding true
         dataBinding true
     }
+    lintOptions {
+        disable "Instantiatable"
+    }
 }
 
 dependencies {

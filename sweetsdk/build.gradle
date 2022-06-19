@@ -62,9 +62,9 @@ afterEvaluate {
         publications {
             release(MavenPublication){
                 from components.release
-                groupId = 'com.ramo.sweetsdk'
-                artifactId = 'sweetsdk'
-                version = '0.9.1'
+                groupId = 'com.github.ramazanogunc'
+                artifactId = 'Android-Sweet-Sdk'
+                version = '0.9.2'
 
             }
         }
