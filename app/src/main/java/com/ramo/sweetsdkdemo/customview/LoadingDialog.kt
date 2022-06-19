@@ -3,7 +3,7 @@ package com.ramo.sweetsdkdemo.customview
 import android.app.Dialog
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
-import com.ramo.sweetsdk.demo.R
+import com.ramo.sweetsdkdemo.R
 
 class LoadingDialog(context: Context) : Dialog(context) {
     init {

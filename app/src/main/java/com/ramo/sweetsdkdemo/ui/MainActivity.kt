@@ -1,9 +1,9 @@
 package com.ramo.sweetsdkdemo.ui
 
 import android.os.Bundle
-import com.ramo.sweetsdk.demo.databinding.ActivityMainBinding
 import com.ramo.sweetsdk.ext.observeExt
 import com.ramo.sweetsdkdemo.base.BaseActivity
+import com.ramo.sweetsdkdemo.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
@@ -17,7 +17,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     }
 
     private fun initObserver() {
-        observeExt(viewModel.data){
+        observeExt(viewModel.data) {
             binding.textView.text = it
         }
     }
