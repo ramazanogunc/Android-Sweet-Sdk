@@ -1,4 +1,4 @@
-package com.ramo.sweetsdk.demo.customview
+package com.ramo.sweetsdkdemo.customview
 
 import android.app.Dialog
 import android.content.Context

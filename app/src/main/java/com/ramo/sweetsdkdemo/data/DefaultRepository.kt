@@ -1,4 +1,4 @@
-package com.ramo.sweetsdk.demo.data
+package com.ramo.sweetsdkdemo.data
 
 import kotlinx.coroutines.delay
 

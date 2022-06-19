@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Core">
         <activity
-            android:name="com.ramo.sweetsdk.demo.ui.MainActivity"
+            android:name="com.ramo.sweetsdkdemo.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

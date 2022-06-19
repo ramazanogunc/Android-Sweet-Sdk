@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.MainActivity">
+    tools:context="com.ramo.sweetsdkdemo.ui.MainActivity">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRefresh"

@@ -1,4 +1,4 @@
-package com.ramo.sweetsdk.demo.base
+package com.ramo.sweetsdkdemo.base
 
 import android.os.Bundle
 import android.view.View
@@ -6,11 +6,11 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.ramo.sweetsdk.SweetViewModel
-import com.ramo.sweetsdk.demo.customview.LoadingDialog
 import com.ramo.sweetsdk.ext.findGenericWithType
 import com.ramo.sweetsdk.ext.safeContext
 import com.ramo.sweetsdk.state.NavEvent
 import com.ramo.sweetsdk.ui.fragment.ViewBindingFragment
+import com.ramo.sweetsdkdemo.customview.LoadingDialog
 
 abstract class BaseFragment<VB : ViewBinding, VM : SweetViewModel> : ViewBindingFragment<VB>() {
 

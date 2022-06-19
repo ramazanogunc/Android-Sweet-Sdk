@@ -1,9 +1,9 @@
-package com.ramo.sweetsdk.demo.ui
+package com.ramo.sweetsdkdemo.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.ramo.sweetsdk.SweetViewModel
-import com.ramo.sweetsdk.demo.data.DefaultRepository
+import com.ramo.sweetsdkdemo.data.DefaultRepository
 
 class MainViewModel(
     private val defaultRepository: DefaultRepository = DefaultRepository()
