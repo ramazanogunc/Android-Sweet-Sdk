@@ -14,13 +14,13 @@ import kotlinx.coroutines.launch
 abstract class SweetViewModel : ViewModel() {
 
     private val _isLoading = MutableLiveData(false)
-    internal val isLoading: LiveData<Boolean> = _isLoading
+    internal val isLoading: LiveData<Boolean> get() = _isLoading
 
     private val _dialogEvent = MutableLiveData<DialogEvent>()
-    internal val dialogEvent: LiveData<DialogEvent> = _dialogEvent
+    internal val dialogEvent: LiveData<DialogEvent> get() = _dialogEvent
 
     private val _navigationEvent = SingleLiveEvent<NavEvent>()
-    internal val navigationEvent: LiveData<NavEvent> = _navigationEvent
+    internal val navigationEvent: LiveData<NavEvent> get() = _navigationEvent
 
     protected open fun handleSafeException(e: Exception) {
         showError(e)
@@ -32,17 +32,29 @@ abstract class SweetViewModel : ViewModel() {
         block: suspend () -> Unit
     ) {
         viewModelScope.launch {
-            if (loadingVisible) showLoading()
-            try {
-                block()
-            } catch (e: Exception) {
-                if (customHandleException != null)
-                    customHandleException.invoke(e)
-                else
-                    handleSafeException(e)
-            }
-            if (loadingVisible) hideLoading()
+            safeSuspend(
+                loadingVisible = loadingVisible,
+                customHandleException = customHandleException,
+                block = block
+            )
         }
+    }
+
+    protected suspend fun safeSuspend(
+        loadingVisible: Boolean = true,
+        customHandleException: ((Exception) -> Unit)? = null,
+        block: suspend () -> Unit
+    ) {
+        if (loadingVisible) showLoading()
+        try {
+            block()
+        } catch (e: Exception) {
+            if (customHandleException != null)
+                customHandleException.invoke(e)
+            else
+                handleSafeException(e)
+        }
+        if (loadingVisible) hideLoading()
     }
 
     fun showLoading() {
